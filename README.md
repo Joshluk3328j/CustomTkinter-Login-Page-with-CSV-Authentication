@@ -44,9 +44,9 @@ python login.py
 ## 📂 Project Structure
 ```
 /login-app
+  ├── README.md
   ├── login.py
   ├── users.csv
-  ├── README.md
 ```
 
 ## 🤝 Contributing
