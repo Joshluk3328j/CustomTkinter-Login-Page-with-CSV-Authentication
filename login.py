@@ -1,15 +1,12 @@
 import tkinter 
 import customtkinter
-from PIL import ImageTk, Image
+
 import csv
 
 
 with open("users.csv",mode="r",newline="") as infile:
     reader=csv.reader(infile)
-    # with open("users_new.csv",mode="w") as outfile:
-    #     writer=csv.write(outfile)
     users={rows[0]:rows[1] for rows in reader}
-    # users.pop("user")
 
 print(users)
 
@@ -70,9 +67,6 @@ def signedup(user,password1):
     print(users)
     
 def signin(self):
-    # frm.destroy()
-    # frm = customtkinter.CTkFrame(master=window, width=320, height=360, corner_radius=15, border_color="white", border_width=1)
-    # frm.place(relx=0.5,rely=0.5, anchor=tkinter.CENTER)
 
     def show():
         if show_key.get()==True:
@@ -104,8 +98,6 @@ def signin(self):
     checkbox1=customtkinter.CTkCheckBox(master=signin_frm, text="show password",command=show, variable=show_key, onvalue=True,offvalue=False ,font=("century Gothic",10), checkbox_height=12,checkbox_width=12, checkmark_color="green",border_width=2)
     checkbox1.place(relx=0.6,rely=0.58, anchor=tkinter.W)
 
-    # l2=customtkinter.CTkLabel(master=frm, text="Forgot password?", font=("century Gothic", 12))
-    # l2.place(x=185,y=195)
 
     l2=customtkinter.CTkLabel(master=signin_frm, text="Forgot password?", font=("century Gothic", 9),text_color="light green")
     l2.place(x=110,y=300)
@@ -121,7 +113,6 @@ def signin(self):
     sign_up.bind("<Button-1>", signup)
 
 def signup(self):
-    # clear_frame()
     signin_frm.destroy()
     signup_frm = customtkinter.CTkFrame(master=frm, width=320, height=360, corner_radius=15, border_color="white", border_width=1)
     signup_frm.place(relx=0.5,rely=0.5, anchor=tkinter.CENTER)
@@ -152,14 +143,11 @@ def signup(self):
         if show_key.get()==True:
             entry2.configure(show="")
             entry3.configure(show="")
-            # entry4.configure(show="")
-            print(True)
+
         elif show_key.get()==False:
             entry2.configure(show="*")
             entry3.configure(show="*")
-            # entry4.configure(show="")
 
-            print(False)
 
     l2=customtkinter.CTkLabel(master=signup_frm, text="create an Account", font=("century Gothic", 20))
     l2.place(relx=0.5,rely=0.1,anchor=tkinter.CENTER)
@@ -184,11 +172,7 @@ def signup(self):
     checkbox1=customtkinter.CTkCheckBox(master=signup_frm, text="show password", variable=show_key,command=show, onvalue=True,offvalue=False ,font=("century Gothic",10), checkbox_height=12,checkbox_width=12, checkmark_color="green",border_width=2)
     checkbox1.place(relx=0.6,rely=0.49, anchor=tkinter.W)
 
-    # l2=customtkinter.CTkLabel(master=frm, text="Forgot password?", font=("century Gothic", 12))
-    # l2.place(x=185,y=195)
 
-    # show_pass=customtkinter.CTkLabel(master=frm, text="Forgot password?", font=("century Gothic", 9),text_color="light green")
-    # show_pass.place(x=110,y=300)
 
     button2=customtkinter.CTkButton(master=signup_frm,width=220, text="Sign Up", corner_radius=6, command=to_sign_up)
     button2.place(x=50,y=240)
